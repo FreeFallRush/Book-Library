@@ -19,6 +19,63 @@
       <div id="button-container">
         <button class="add-book">add book</button>
       </div>
+
+      <div id="newbook-form">
+        <form id="book-form" action="#" method="post">
+          <button class="close-btn" type="button">X</button>
+          <h2>Add a new book</h2>
+          <div class="form-cell">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="book-title"
+              name="title"
+              placeholder="Add Title"
+            />
+          </div>
+
+          <div class="form-cell">
+            <label for="author">Author</label>
+            <input
+              type="text"
+              id="book-author"
+              name="author"
+              placeholder="Add Author"
+            />
+          </div>
+
+          <div class="form-cell">
+            <label for="pages">Pages</label>
+            <input
+              type="text"
+              id="book-pages"
+              name="pages"
+              placeholder="Add Number of Pages"
+            />
+          </div>
+
+          <div class="status">
+            <label for="bookstatus">Have you read this book?</label>
+
+            <div class="status-input">
+              <input type="radio" id="yes" name="bookstatus" value="read" />
+              Yes
+            </div>
+
+            <div class="status-input">
+              <input
+                type="radio"
+                id="no"
+                name="bookstatus"
+                value="unread"
+                checked
+              />
+              No
+            </div>
+          </div>
+          <button id="submit" type="submit">Add Book</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

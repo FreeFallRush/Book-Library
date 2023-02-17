@@ -184,8 +184,9 @@ input {
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
   justify-items: center;
-  gap: 10px;
+  gap: 25px;
   padding-top: 45px;
+  padding-bottom: 30px;
   background-color: var(--primary-color);
 }
 
@@ -242,4 +243,39 @@ h3 {
   background-color: var(--secondary-bg-color);
   color: var(--secondary-color);
   box-shadow: var(--inset-box-shadow);
+}
+
+@media all and (max-width: 912px) {
+  #library-container {
+    width: 100%;
+  }
+
+  #books-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    justify-items: center;
+    gap: 14px;
+
+    padding-bottom: 15px;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  button.add-book {
+    width: 75%;
+    height: auto;
+    padding: 5px;
+  }
+
+  #logo {
+    grid-row: 1/-1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }

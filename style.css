@@ -4,12 +4,14 @@
   --primary-color: rgb(0, 0, 0);
   --secondary-color: rgb(255, 255, 255);
   --secondary-bg-color: rgb(170, 170, 170);
+  --card-bg-color: rgb(251, 246, 104);
   --dotted-border: 3px dotted black;
   --header-text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
     0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
     0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
     0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  --card-text-shadow: 0px 1px 3px #69afec;
   --inset-box-shadow: 5px 5px 5px grey inset;
   --x-btn-border: 2px dotted #fff;
   --complex-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -138,13 +140,16 @@ input {
   height: 40px;
 }
 
-.close-btn {
+.close-btn,
+.delete-btn {
   cursor: pointer;
   width: 30px;
   height: 30px;
   position: absolute;
   left: 93%;
   bottom: 93%;
+  align-self: start;
+  justify-self: end;
   border: var(--x-btn-border);
   border-radius: 100%;
   color: var(--secondary-color);
@@ -152,7 +157,8 @@ input {
   box-shadow: var(--inset-box-shadow);
 }
 
-.close-btn:hover {
+.close-btn:hover,
+.delete-btn:hover {
   color: var(--primary-color);
   font-weight: bold;
   border: var(--dotted-border);
@@ -168,4 +174,71 @@ input {
   opacity: 0.1;
   z-index: 1;
   transition: opacity 0.1s ease-out;
+}
+
+#books-container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  justify-items: center;
+  gap: 10px;
+  padding-top: 45px;
+  background-color: var(--primary-color);
+}
+
+.book-card {
+  width: 250px;
+  min-height: 350px;
+  display: grid;
+  grid-template-rows: 0.2fr 1.2fr 0.5fr 0.1fr 0.2;
+  position: relative;
+  justify-items: center;
+  padding: 15px 30px 30px 30px;
+  border: var(--dotted-border);
+  background-color: var(--card-bg-color);
+  box-shadow: var(--complex-box-shadow);
+}
+
+.unread {
+  box-shadow: var(--inset-box-shadow);
+  background-color: var(--secondary-color);
+  border: var(--dotted-border);
+  color: red;
+}
+
+.book-title,
+.book-author {
+  text-transform: uppercase;
+  color: #0d0f10;
+  text-align: center;
+  padding-top: 10px;
+  text-shadow: var(--card-text-shadow);
+  font-size: 0.9rem;
+  margin: 0px;
+  word-break: break-word;
+}
+
+h3 {
+  padding-bottom: 8px;
+}
+
+.book-pages {
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+}
+
+.book-status {
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  border-radius: 25px;
+  border: var(--dotted-border);
+}
+
+.book-status:hover {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-color);
+  box-shadow: var(--inset-box-shadow);
 }

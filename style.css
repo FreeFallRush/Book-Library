@@ -11,6 +11,7 @@
     0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
   --inset-box-shadow: 5px 5px 5px grey inset;
+  --x-btn-border: 2px dotted #fff;
   --complex-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
@@ -74,7 +75,8 @@ img {
   box-shadow: var(--inset-box-shadow);
 }
 
-button.add-book {
+button.add-book,
+#submit {
   width: 270px;
   height: auto;
   font-size: 1.5rem;
@@ -82,7 +84,78 @@ button.add-book {
   box-shadow: var(--complex-box-shadow);
 }
 
-button.add-book:hover {
+button.add-book:hover,
+#submit:hover {
   border: var(--dotted-border);
   box-shadow: var(--inset-box-shadow);
+}
+
+#newbook-form {
+  width: 300px;
+  height: 370px;
+  position: absolute;
+  top: 35%;
+  padding: 30px;
+  background-color: var(--secondary-bg-color);
+  border: var(--dotted-border);
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-cell {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+label {
+  color: var(--primary-color);
+  padding-top: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+input {
+  padding: 5px;
+}
+
+.status {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.status-input {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+#submit {
+  width: 240px;
+  height: 40px;
+}
+
+.close-btn {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 93%;
+  bottom: 93%;
+  border: var(--x-btn-border);
+  border-radius: 100%;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  box-shadow: var(--inset-box-shadow);
+}
+
+.close-btn:hover {
+  color: var(--primary-color);
+  font-weight: bold;
+  border: var(--dotted-border);
+  box-shadow: var(--inset-box-shadow);
+  background-color: var(--secondary-bg-color);
 }

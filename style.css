@@ -159,3 +159,13 @@ input {
   box-shadow: var(--inset-box-shadow);
   background-color: var(--secondary-bg-color);
 }
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  opacity: 0.1;
+  z-index: 1;
+  transition: opacity 0.1s ease-out;
+}

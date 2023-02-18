@@ -82,6 +82,7 @@ button.add-book,
   width: 270px;
   height: auto;
   font-size: 1.5rem;
+  color: var(--primary-color);
   background-color: var(--secondary-color);
   box-shadow: var(--complex-box-shadow);
 }
@@ -237,6 +238,7 @@ h3 {
   height: 35px;
   text-align: center;
   border-radius: 25px;
+  color: var(--primary-color);
   border: var(--dotted-border);
 }
 

@@ -172,8 +172,13 @@ function removeBook() {
     btn.addEventListener("click", function (event) {
       event.stopPropagation();
       let index = i;
+      let confirmation = confirm(
+        `Are you sure you want to remove '${myLibrary[
+          index
+        ].title.toUpperCase()}' from library?`
+      );
 
-      myLibrary.splice(index, 1);
+      if (confirmation === true) myLibrary.splice(index, 1);
 
       toggleBookStatus();
       displayBook();

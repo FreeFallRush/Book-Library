@@ -290,6 +290,6 @@ h3 {
     padding: 30px;
   }
   #submit {
-    z-index: 2;
+    background-color: var(--card-bg-color);
   }
 }

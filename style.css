@@ -285,11 +285,14 @@ h3 {
     height: 370px;
     position: absolute;
     top: 45%;
-    left: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     z-index: 2;
     padding: 30px;
   }
   #submit {
-    background-color: var(--card-bg-color);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
   }
 }

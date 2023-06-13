@@ -16,3 +16,5 @@ The exercise asks:
 
 Through the Library App project I put in practice what I've learned about constructor functions and got more familiar with how dynamically instances are created. It was also a good exercise to practice more looping through arrays and DOM manipulation (especially the setAttribute and getAttribute, that were very helpful when implementing the toggle button read/unread for each book).
 On the CSS side, it helped me practice more using CSS variables and using grid.
+
+Update: I added local storage

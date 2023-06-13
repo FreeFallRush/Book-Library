@@ -9,7 +9,40 @@ const inputTitle = document.getElementById("book-title");
 const inputAuthor = document.getElementById("book-author");
 const inputPages = document.getElementById("book-pages");
 
-const myLibrary = [];
+let myLibrary = [];
+if (localStorage.getItem("bookLibrary") === null) {
+  myLibrary.push(
+    new Book(
+      "Duty Free Art: Art in the Age of Planetary Civil War",
+      "Hito Steyerl",
+      304,
+      "read"
+    )
+  );
+  myLibrary.push(
+    new Book(
+      "Cyberpop: Digital Lifestyles and Commodity Culture",
+      "Sidney Eve Matrix ",
+      206,
+      "unread"
+    )
+  );
+  myLibrary.push(
+    new Book(
+      "Zeros and Ones: Digital Women and the New Technoculture",
+      "Sadie Plant",
+      320,
+      "read"
+    )
+  );
+} else {
+  const loadBooksFromStorage = JSON.parse(localStorage.getItem("bookLibrary"));
+  myLibrary = loadBooksFromStorage;
+}
+
+const saveBookInLibrary = () => {
+  localStorage.setItem("bookLibrary", JSON.stringify(myLibrary));
+};
 
 //Book constructor function
 function Book(title, author, pages, bookstatus) {
@@ -124,7 +157,7 @@ function displayBook() {
     body.appendChild(bookCard);
   }
   toggleBookStatus();
-
+  saveBookInLibrary();
   removeBook();
 }
 
@@ -143,6 +176,7 @@ function toggleBookStatus() {
         cards.forEach((card, i) => {
           if (i === index) {
             card.classList.add("unread");
+            saveBookInLibrary();
           }
 
           return card;
@@ -155,6 +189,7 @@ function toggleBookStatus() {
         cards.forEach((card, i) => {
           if (i === index) {
             card.classList.remove("unread");
+            saveBookInLibrary();
           }
 
           return card;
@@ -181,37 +216,11 @@ function removeBook() {
       if (confirmation === true) myLibrary.splice(index, 1);
 
       toggleBookStatus();
+      saveBookInLibrary();
       displayBook();
     });
   });
 }
 
 addBook();
-
-window.onload = () => {
-  myLibrary.push(
-    new Book(
-      "Duty Free Art: Art in the Age of Planetary Civil War",
-      "Hito Steyerl",
-      304,
-      "read"
-    )
-  );
-  myLibrary.push(
-    new Book(
-      "Cyberpop: Digital Lifestyles and Commodity Culture",
-      "Sidney Eve Matrix ",
-      206,
-      "unread"
-    )
-  );
-  myLibrary.push(
-    new Book(
-      "Zeros and Ones: Digital Women and the New Technoculture",
-      "Sadie Plant",
-      320,
-      "read"
-    )
-  );
-  displayBook();
-};
+displayBook();
